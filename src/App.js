@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import TodoList from "./TodoList/TodoList";
+import Card from "./Shared/Card/Card";
 
 function App() {
+  const todos = [
+    { id: 1, name: "First" },
+    { id: 2, name: "Second" },
+    { id: 3, name: "Third" }
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Card>
+        <Card.Header>React Component API</Card.Header>
+        <Card.Body>
+          <TodoList todos={todos} />
+        </Card.Body>
+        <Card.Footer>Todos: {todos.length}</Card.Footer>
+      </Card>
     </div>
   );
 }
